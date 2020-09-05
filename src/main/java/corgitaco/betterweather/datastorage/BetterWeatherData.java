@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.storage.DimensionDataStorage;
 
@@ -61,7 +62,7 @@ public class BetterWeatherData extends SavedData {
     public static BetterWeatherData get(LevelAccessor world) {
         if (!(world instanceof ServerLevel))
             return new BetterWeatherData();
-        ServerLevel overWorld = ((ServerLevel) world).getLevel().getServer().getLevel(Level.OVERWORLD);
+        ServerLevel overWorld = ((ServerLevel) world).getLevel().getServer().getLevel(DimensionType.OVERWORLD);
         DimensionDataStorage data = overWorld.getDataStorage();
         BetterWeatherData weatherData = data.get(BetterWeatherData::new, DATA_NAME);
 

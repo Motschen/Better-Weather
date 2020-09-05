@@ -10,6 +10,11 @@ import net.fabricmc.api.Environment;
 public class BWModMenuIntegration implements ModMenuApi {
 
     @Override
+    public String getModId() {
+        return "betterweather";
+    }
+
+    @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
         return parent -> AutoConfig.getConfigScreen(BetterWeatherConfig.class, parent).get();
     }

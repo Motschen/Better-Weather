@@ -73,7 +73,7 @@ public abstract class MixinWorldRenderer {
                     graphicsQuality = 10;
                 }
 
-                RenderSystem.depthMask(Minecraft.useShaderTransparency());
+                RenderSystem.depthMask(Minecraft.useFancyGraphics());
                 int i1 = -1;
                 float ticksAndPartialTicks = (float) this.ticks + partialTicks;
                 RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
